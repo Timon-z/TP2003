@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //实现接口的动态绑定
 @MapperScan(basePackages = "cn.kgc.demo.springboot.spring_demo.mybatis.mapper")
 //扫描service
-@ComponentScan(basePackages = {"cn.kgc.demo.springboot.spring_demo.service","cn.kgc.demo.springboot.spring_demo.controller"})
+@ComponentScan(basePackages = {"cn.kgc.demo.springboot.spring_demo.service","cn.kgc.demo.springboot.spring_demo.controller","cn.kgc.demo.springboot.spring_demo.config"})
 //开启注解事务
 @EnableTransactionManagement
 public class SpringDemoApplication {

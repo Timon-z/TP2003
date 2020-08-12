@@ -1,20 +1,23 @@
 server:
   port: 8088
+
 spring:
   application:
-    name: My Demo SSMRT
+    name: redis
+  thymeleaf:
+    cache: false
   redis:
-    database: 0             # RedisÊı¾İ¿âË÷Òı£¨Ä¬ÈÏÎª0£©
-    host: localhost         # Redis·şÎñÆ÷µØÖ·
-    port: 6379              # Redis·şÎñÆ÷Á¬½Ó¶Ë¿Ú
-    password:               # Redis·şÎñÆ÷Á¬½ÓÃÜÂë£¨Ä¬ÈÏÎª¿Õ£©
-#    timeout: 1000           # Á¬½Ó³¬Ê±Ê±¼ä£¨ºÁÃë£©
+    database: 0             # Redisæ•°æ®åº“ç´¢å¼•ï¼ˆé»˜è®¤ä¸º0ï¼‰
+    host: 127.0.0.1         # RedisæœåŠ¡å™¨åœ°å€
+    port: 6379              # RedisæœåŠ¡å™¨è¿æ¥ç«¯å£
+    password:               # RedisæœåŠ¡å™¨è¿æ¥å¯†ç ï¼ˆé»˜è®¤ä¸ºç©ºï¼‰
+    #timeout: 1000           # è¿æ¥è¶…æ—¶æ—¶é—´ï¼ˆæ¯«ç§’ï¼‰
     jedis:
       pool:
-        max-active: 8       # Á¬½Ó³Ø×î´óÁ¬½ÓÊı£¨Ê¹ÓÃ¸ºÖµ±íÊ¾Ã»ÓĞÏŞÖÆ£©
-#        max-wait: -1        # Á¬½Ó³Ø×î´ó×èÈûµÈ´ıÊ±¼ä£¨Ê¹ÓÃ¸ºÖµ±íÊ¾Ã»ÓĞÏŞÖÆ£©
-        max-idle: 8         # Á¬½Ó³ØÖĞµÄ×î´ó¿ÕÏĞÁ¬½Ó
-        min-idle: 0         # Á¬½Ó³ØÖĞµÄ×îĞ¡¿ÕÏĞÁ¬½Ó
+        max-active: 8       # è¿æ¥æ± æœ€å¤§è¿æ¥æ•°ï¼ˆä½¿ç”¨è´Ÿå€¼è¡¨ç¤ºæ²¡æœ‰é™åˆ¶ï¼‰
+        #max-wait: -1        # è¿æ¥æ± æœ€å¤§é˜»å¡ç­‰å¾…æ—¶é—´ï¼ˆä½¿ç”¨è´Ÿå€¼è¡¨ç¤ºæ²¡æœ‰é™åˆ¶ï¼‰
+        max-idle: 8         # è¿æ¥æ± ä¸­çš„æœ€å¤§ç©ºé—²è¿æ¥
+        min-idle: 0         # è¿æ¥æ± ä¸­çš„æœ€å°ç©ºé—²è¿æ¥
   datasource:
     url: jdbc:mysql://localhost:3306/smbms?autoReconnect=true&useSSL=false&characterEncoding=utf-8&serverTimezone=UTC
     username: root
